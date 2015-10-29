@@ -45,9 +45,9 @@ class search {
             $token = strtolower($value);
 
             //if not in qutation marks then check if in stoplist
-            if (mb_substr($token, 1, 1) != '"' && mb_substr($token, -1) != '"') {
+            if (mb_substr($token, 0, 1) != '"' && mb_substr($token, -1) != '"') {
                 if (in_array($token, $stopwords)) {
-                    unset($tokens[$key]);
+                    $token[$key] = false;
                     continue;
                 }
             } else {

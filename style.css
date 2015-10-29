@@ -86,6 +86,16 @@ a:hover{
     margin: 20px 0;
 }
 
-.admin table {
+#print {
+  
+    float: right;
+    display: inline-block;
+    cursor: pointer;
 
+}
+
+@media print {
+    #print {
+        display: none;
+    }
 }
