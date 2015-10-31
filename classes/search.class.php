@@ -79,6 +79,7 @@ class search {
 
         $result = $root->evaluate();
 
+        
         $tokens = array_diff($tokens, parser::operators_dictionary);
 
 
@@ -123,6 +124,10 @@ class search {
 
     //returns thre synonyms of a term
     function get_synonyms($term) {
+        
+        if ( in_array($term, parser::operators_dictionary)) {
+            return array($term);
+        }
         $synonyms = array();
         $apikey = "zQSlnuU9epzy9qUtH92f"; // NOTE: replace test_only with your own key 
         $word = $term; // any word 

@@ -62,7 +62,7 @@ class andEx extends expression {
             $l = $r = array();
         }
         
-        $intersect = array_intersect($l,$r);
+        $intersect = array_intersect_key($l,$r);
         return $intersect;
     }
 
